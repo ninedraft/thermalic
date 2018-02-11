@@ -14,6 +14,12 @@
   version = "v1.0.0"
 
 [[projects]]
+  name = "github.com/gilliek/go-opml"
+  packages = ["opml"]
+  revision = "d6574241cba8c59785768eb791bc384966e1177f"
+  version = "v1.0.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/lucasb-eyer/go-colorful"
   packages = ["."]
@@ -40,6 +46,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "613721abd49573ef03d3aea031637a5a3690a895307551f092d105ea6e6235c0"
+  inputs-digest = "7d0450c2791bf7abce7bb8122f422a16c93becd075b4b18509a0f31764cd29c0"
   solver-name = "gps-cdcl"
   solver-version = 1
