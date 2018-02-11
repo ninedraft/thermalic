@@ -1,4 +1,4 @@
-package podcast
+package models
 
 type OPMLentry struct {
 	Name string

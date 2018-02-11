@@ -1,4 +1,4 @@
-package podcast
+package models
 
 import (
 	"time"
