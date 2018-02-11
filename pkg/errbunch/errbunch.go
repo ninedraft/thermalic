@@ -2,6 +2,7 @@ package errbunch
 
 import (
 	"bytes"
+	"fmt"
 )
 
 type Err string
@@ -15,6 +16,10 @@ func (err Err) Wrap(errs ...error) *Wrapper {
 		top:   err,
 		chain: errs,
 	}
+}
+
+func (err Err) Wrapf(formats string, vals ...interface{}) *Wrapper {
+	return err.Wrap(fmt.Errorf(formats, vals...))
 }
 
 type Wrapper struct {
