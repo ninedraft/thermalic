@@ -2,13 +2,18 @@ package opml
 
 import (
 	"github.com/gilliek/go-opml/opml"
+	"github.com/ninedraft/thermalic/pkg/errbunch"
 	"github.com/ninedraft/thermalic/pkg/models"
+)
+
+const (
+	ErrUnableParseOPMLFile errbunch.Err = "unable to parse opml file"
 )
 
 func ParseOPMLFile(path string) ([]models.OPMLentry, error) {
 	OPMLdata, err := opml.NewOPMLFromFile(path)
 	if err != nil {
-		return nil, err
+		return nil, ErrUnableParseOPMLFile.Wrap(err)
 	}
 	outlines := OPMLdata.Outlines()
 	feeds := make([]models.OPMLentry, 0, len(outlines))
